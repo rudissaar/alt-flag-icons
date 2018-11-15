@@ -1,0 +1,33 @@
+.alt-flag-icon-background {
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+}
+
+.alt-flag-icon {
+    @extend .alt-flag-icon-background;
+
+    position: relative;
+    display: inline-block;
+    width: (4 / 3) * 1em;
+    line-height: 1em;
+
+    &:before {
+        content: '\00a0';
+    }
+
+    &.alt-flag-icon-squared {
+        width: 1em;
+    }
+}
+
+@mixin alt-flag-icon($flag) {
+    .alt-flag-icon-#{$flag} {
+        background-image: url(#{$alt-flag-icon-css-path}#{$alt-flag-icon-rect-path}/#{$flag}.svg);
+        
+        &.alt-flag-icon-squared {
+            background-image: url(#{$alt-flag-icon-css-path}#{$alt-flag-icon-square-path}/#{$flag}.svg);
+        }
+    }
+}
+

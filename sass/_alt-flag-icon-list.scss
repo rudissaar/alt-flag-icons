@@ -1,0 +1,10 @@
+@if variable-exists(include) {
+    @each $flag in $include {
+        @include alt-flag-icon($flag);
+    }
+} @else {
+    @include alt-flag-icon(ee-cross-a);
+    @include alt-flag-icon(ee-cross-b);
+    @include alt-flag-icon(ee-cross-c);
+}
+
